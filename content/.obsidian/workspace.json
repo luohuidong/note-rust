@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "类型系统.md",
+                "file": "变量与常量.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,35 +80,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "fea171d56c07424b",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "类型系统.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "02846aa9e817d4c0",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "类型系统.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
             "id": "bc7e2b2fc33759e3",
             "type": "leaf",
             "state": {
@@ -125,16 +96,52 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "类型系统.md"
+                "file": "变量与常量.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "72af5593e337c98d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fea171d56c07424b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "变量与常量.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "02846aa9e817d4c0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "变量与常量.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,6 +156,7 @@
   "active": "55db1e7194f7f7a9",
   "lastOpenFiles": [
     "index.md",
+    "变量与常量.md",
     "类型系统.md"
   ]
 }
