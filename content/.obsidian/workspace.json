@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "f96cc80dc728e3c1",
+        "id": "6ba26a777082f0b6",
         "type": "tabs",
         "children": [
           {
-            "id": "55db1e7194f7f7a9",
+            "id": "2adcc745e46d41d8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "变量与常量.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -95,9 +91,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "变量与常量.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -113,7 +107,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "变量与常量.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,14 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "变量与常量.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -153,10 +144,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "55db1e7194f7f7a9",
+  "active": "2adcc745e46d41d8",
   "lastOpenFiles": [
+    "流程控制/for.md",
+    "流程控制/流程控制.md",
+    "流程控制/while.md",
+    "流程控制/loop.md",
+    "流程控制/if-else.md",
+    "流程控制/表达式与语句.md",
     "index.md",
-    "变量与常量.md",
-    "类型系统.md"
+    "类型系统.md",
+    "assets/Pasted image 20240407100800.png",
+    "assets/Pasted image 20240407100603.png",
+    "assets",
+    "流程控制",
+    "数据类型/数值.md",
+    "数据类型/基础数据类型.md",
+    "数据类型",
+    "变量与常量.md"
   ]
 }
