@@ -11,8 +11,12 @@
             "id": "2adcc745e46d41d8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "表达式/函数.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "作用域",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -91,7 +95,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "表达式/函数.md"
+              }
             }
           }
         ],
@@ -107,6 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "表达式/函数.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,6 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "表达式/函数.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,21 +154,37 @@
   },
   "active": "2adcc745e46d41d8",
   "lastOpenFiles": [
-    "流程控制/for.md",
-    "流程控制/流程控制.md",
-    "流程控制/while.md",
-    "流程控制/loop.md",
-    "流程控制/if-else.md",
-    "流程控制/表达式与语句.md",
+    "表达式/循环.md",
+    "表达式/表达式.md",
+    "表达式/if 表达式.md",
+    "表达式/while-let.md",
+    "表达式/for.md",
+    "表达式/while 表达式.md",
+    "表达式/loop.md",
     "index.md",
+    "枚举与模式.md",
     "类型系统.md",
+    "表达式/if-let.md",
+    "表达式/match 表达式.md",
+    "表达式/块与分号.md",
+    "表达式/函数.md",
+    "变量与可变性.md",
+    "表达式/表达式与语句.md",
+    "常量.md",
+    "表达式/发散函数.md",
+    "assets/Pasted image 20240407160707.png",
+    "表达式/高阶函数.md",
+    "assets/Pasted image 20240407160249.png",
+    "assets/Pasted image 20240407144518.png",
+    "assets/Pasted image 20240407143728.png",
+    "assets/Pasted image 20240407142513.png",
+    "assets/Pasted image 20240407120205.png",
     "assets/Pasted image 20240407100800.png",
     "assets/Pasted image 20240407100603.png",
     "assets",
-    "流程控制",
+    "表达式",
     "数据类型/数值.md",
     "数据类型/基础数据类型.md",
-    "数据类型",
-    "变量与常量.md"
+    "数据类型"
   ]
 }
