@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a84989368c333a1b",
+        "id": "76607253d87bc889",
         "type": "tabs",
         "children": [
           {
-            "id": "95998a9cd904481d",
+            "id": "487955297b560a3a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -144,9 +144,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "95998a9cd904481d",
+  "active": "487955297b560a3a",
   "lastOpenFiles": [
     "index.md",
+    "所有权.md",
     "rustc与Cargo.md",
     "模块系统/模块系统.md",
     "模块系统",
