@@ -9,6 +9,8 @@ title: Rust Note
 	- [[基础数据类型]]
 	- [[表达式]]
 	- [[枚举与模式]]
-- [[所有权]]
+- 所有权
+	- [What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#what-is-ownership)：了解 Rust 内存管理。
+	- [References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#references-and-borrowing)
 - [[模块系统]]
 - [[错误处理]]
