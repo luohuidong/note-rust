@@ -11,6 +11,7 @@ title: Rust Note
 	- [[枚举与模式]]
 - 所有权
 	- [What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#what-is-ownership)：了解 Rust 内存管理。
-	- [References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#references-and-borrowing)
+	- [References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#references-and-borrowing)：了解引用，可用于解决函数传参的时候所有权转移的问题。
+	- [The Slice Type](https://doc.rust-lang.org/book/ch04-03-slices.html#the-slice-type)
 - [[模块系统]]
 - [[错误处理]]
