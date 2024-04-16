@@ -10,18 +10,27 @@ title: Rust Note
 	- [[表达式]]
 	- [[枚举与模式]]
 
+## 基础概念
+
+[Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#variables-and-mutability)：了解变量的不可变性与可变性、常量、变量 shadowing。
+
+[Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html#data-types)
+
+[Functions](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html#functions)，了解 Rust 的函数定义、了解语句与表达式的区别。Rust 是一门基于表达式的语言，因此了解语句与表达式的区别比较重要。
+
+
 ## 所有权
 
-[What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#what-is-ownership)：了解所有权。所有权是 Rust 独特的内存管理机制，能保证资源的及时释放，避免内存泄漏的问题。
+[What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#what-is-ownership)，了解所有权。所有权是 Rust 独特的内存管理机制，能保证资源的及时释放，避免内存泄漏的问题。
 
 所有权的规则：
 - Each value in Rust has an _owner_.
 - There can only be one owner at a time.
 - When the owner goes out of scope, the value will be dropped.
 
-[References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#references-and-borrowing)：通过引用可以解决函数传参的时候所有权转移的问题。
+[References and Borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#references-and-borrowing)，通过引用可以解决函数传参的时候所有权转移的问题。
 
-[The Slice Type](https://doc.rust-lang.org/book/ch04-03-slices.html#the-slice-type)：以引用的方式访问一个集合中连续的一部分。通过 slice 可以安全地访问数据的一部分，避免越界访问。
+[The Slice Type](https://doc.rust-lang.org/book/ch04-03-slices.html#the-slice-type)，以引用的方式访问一个集合中连续的一部分。通过 slice 可以安全地访问数据的一部分，避免越界访问。
 
 ## 结构体
 
