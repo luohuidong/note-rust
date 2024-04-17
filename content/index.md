@@ -12,12 +12,22 @@ title: Rust Note
 
 ## 基础概念
 
-[Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#variables-and-mutability)：了解变量的不可变性与可变性、常量、变量 shadowing。
+[Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#variables-and-mutability)，了解变量的不可变性与可变性、常量、变量 shadowing。
 
-[Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html#data-types)
+[Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html#data-types)，了解 Rust scalar 和 compound 类型数据。scalar 类型表示单个数值。而 compound 类型表示一组相同类型的值。
+
+- 四个主要的 scalar type 类型数据：
+	- integers
+	- floating-point numbers
+	- booleans
+	- characters
+- compound type 类型数据：
+	- tuples
+	- arrays
 
 [Functions](https://doc.rust-lang.org/book/ch03-03-how-functions-work.html#functions)，了解 Rust 的函数定义、了解语句与表达式的区别。Rust 是一门基于表达式的语言，因此了解语句与表达式的区别比较重要。
 
+[Control Flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html#control-flow)，了解 Rust 中的控制流。
 
 ## 所有权
 
