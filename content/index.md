@@ -12,6 +12,8 @@ title: Rust Note
 
 ## 基础概念
 
+[Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html#hello-world)，[Hello, Cargo!](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html#hello-cargo)，了解 rustc 和 cargo。
+
 [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html#variables-and-mutability)，了解变量的不可变性与可变性、常量、变量 shadowing。
 
 [Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html#data-types)，了解 Rust scalar 和 compound 类型数据。scalar 类型表示单个数值。而 compound 类型表示一组相同类型的值。
@@ -44,6 +46,11 @@ title: Rust Note
 
 ## 结构体
 
+rust 的结构体类似 JavaScript 中的类：
+
+- [Defining and Instantiating Structs](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#defining-and-instantiating-structs)
+- [An Example Program Using Structs](https://doc.rust-lang.org/book/ch05-02-example-structs.html#an-example-program-using-structs)
+- [Method Syntax](https://doc.rust-lang.org/book/ch05-03-method-syntax.html#method-syntax)
 
 ## 模块系统
 
