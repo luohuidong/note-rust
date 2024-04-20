@@ -1,15 +1,6 @@
 ---
 title: Rust Note
 ---
-- 基本概念
-	- [[rustc与Cargo]]
-	- [[类型系统]]
-	- [[变量与可变性]]
-	- [[常量]]
-	- [[基础数据类型]]
-	- [[表达式]]
-	- [[枚举与模式]]
-
 ## 基础概念
 
 [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html#hello-world)，[Hello, Cargo!](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html#hello-cargo)，了解 rustc 和 cargo。
@@ -60,6 +51,3 @@ rust 的结构体类似 JavaScript 中的类：
 - [Bringing Paths into Scope with the `use` Keyword](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html#bringing-paths-into-scope-with-the-use-keyword)：通过 use 关键字简化模块引用。
 - [Separating Modules into Different Files](https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html#separating-modules-into-different-files)：了解如何将不同的模块拆分到不同的文件中。
 
-## 错误处理
-
-- [[错误处理]]
