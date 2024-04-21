@@ -47,8 +47,11 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 
 ## 枚举与模式匹配
 
-[Defining an Enum](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#defining-an-enum)，了解 Enum 的使用、了解 `Option` Enum。
+- [Defining an Enum](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#defining-an-enum)，了解 Enum 的使用。
+- [The `match` Control Flow Construct](https://doc.rust-lang.org/book/ch06-02-match.html#the-match-control-flow-construct)，`match` 类似与其他语言的 `switch` 语句。
+- [Concise Control Flow with `if let`](https://doc.rust-lang.org/book/ch06-03-if-let.html#concise-control-flow-with-if-let)：使用 `if let` 比 `match` 更简洁。
 
+常用的内置 Enum 为 `Option`。`match` 与 `if let` 可以与 `Option` 搭配使用。使用 `if let` 可以写出比 `match` 更简洁的代码，但是 `if let` 并不像 `match` 那样强制处理 enum 的每一种情况，这需要根据自己的实际情况来选择究竟是使用 `if let` 还是使用 `match`。
 
 ## 模块系统
 
@@ -57,4 +60,15 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 - [Paths for Referring to an Item in the Module Tree](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#paths-for-referring-to-an-item-in-the-module-tree)：了解模块的引用。
 - [Bringing Paths into Scope with the `use` Keyword](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html#bringing-paths-into-scope-with-the-use-keyword)：通过 use 关键字简化模块引用。
 - [Separating Modules into Different Files](https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html#separating-modules-into-different-files)：了解如何将不同的模块拆分到不同的文件中。
+
+## 高级功能
+
+[Macros](https://doc.rust-lang.org/book/ch19-06-macros.html#macros)：了解宏。
+
+在 Rust 中，宏（Macro）是一种特殊的代码生成器，用于在编译时执行代码转换和代码生成。它们允许开发者编写通用代码模板，以及在编译时根据这些模板生成特定代码的能力。
+
+Rust 中的宏分为两种主要类型：过程宏（Procedural Macros）和声明宏（Declarative Macros）。
+
+1. **过程宏（Procedural Macros）**：过程宏允许你编写一个宏，它可以像一个函数一样接受输入并产生代码作为输出。过程宏通常用于实现自定义的派生宏（derive macros）和自定义的属性宏（attribute macros），以及其他需要在编译时进行代码操作的场景。
+2. **声明宏（Declarative Macros）**：声明宏也被称为“宏规则”或“宏使用”（macro_rules!），它们是一种基于模式匹配的简单文本替换系统。通过声明宏，你可以定义一组规则，以便在源代码中匹配特定模式并进行替换。
 
