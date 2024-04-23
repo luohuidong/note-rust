@@ -61,7 +61,7 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 - [Bringing Paths into Scope with the `use` Keyword](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html#bringing-paths-into-scope-with-the-use-keyword)：通过 use 关键字简化模块引用。
 - [Separating Modules into Different Files](https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html#separating-modules-into-different-files)：了解如何将不同的模块拆分到不同的文件中。
 
-## 泛型、Traits 和生命周期
+## 泛型
 
 [Generic Data Types](https://doc.rust-lang.org/book/ch10-01-syntax.html#generic-data-types)，了解泛型的使用。
 
@@ -103,9 +103,37 @@ fn main() {
 
 在使用泛型的时候，无需担心会影响运行时的性能，monomorphization（单态化）会在编译时根据具体的类型生成特定的代码实例。这种方式可以消除泛型引入的性能损失，并且在编译时进行类型检查。
 
-Rust 中的 Traits 类似于其他语言的 interface。
+## Traits
 
-## 高级功能
+[Traits: Defining Shared Behavior](https://doc.rust-lang.org/book/ch10-02-traits.html#traits-defining-shared-behavior)，Rust 中的 Traits 类似于其他语言的 interface。
+
+当类型实现了某个 trait 后，如果在其他 crate 中实例化这个类型并且想调用 trait 方法，则需要将该 trait 也引入到作用域中。
+
+```rust
+use aggregator::{Summary, Tweet};
+
+fn main() {
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        retweet: false,
+    };
+
+    println!("1 new tweet: {}", tweet.summarize());
+}
+```
+
+上面的例子中，`Tweet` 这个类型实现了 `Summary` 这个 trait，`summarize` 为 `Summary` 这个 trait 的方法。当实例 `tweet` 要使用 `summarize` 方法，则需要将 `Summary` 这个 trait 也引入到作用域中。
+
+另外需要注意的是，如果需要对某个类型实现某个 trait，则类型或者 trait 至少其中一个需要在我们自己的 crate 中。也就是说类型或者 trait 两者不同都是从外部的 crate 引入。
+
+## 生命周期
+
+
+## Macro
 
 [Macros](https://doc.rust-lang.org/book/ch19-06-macros.html#macros)：了解宏，宏的功能类似于其他语言的装饰器。
 
