@@ -128,7 +128,20 @@ fn main() {
 
 上面的例子中，`Tweet` 这个类型实现了 `Summary` 这个 trait，`summarize` 为 `Summary` 这个 trait 的方法。当实例 `tweet` 要使用 `summarize` 方法，则需要将 `Summary` 这个 trait 也引入到作用域中。
 
-另外需要注意的是，如果需要对某个类型实现某个 trait，则类型或者 trait 至少其中一个需要在我们自己的 crate 中。也就是说类型或者 trait 两者不同都是从外部的 crate 引入。
+需要注意的是，我们无法对外部的类型实现外部的 trait。两者中必须满足最少其中一个是在我们本地的 crate 中。
+
+在定义 trait 的时候，方法可以有默认的实现，这个有点类似于抽象类。在默认实现中还可以 trait 中的其他方法：
+
+```rust
+pub trait Summary {
+    fn summarize_author(&self) -> String;
+
+    fn summarize(&self) -> String {
+        format!("(Read more from {}...)", self.summarize_author())
+    }
+}
+```
+
 
 ## 生命周期
 
