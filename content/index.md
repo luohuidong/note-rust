@@ -142,9 +142,11 @@ pub trait Summary {
 }
 ```
 
+## 生命周期（待完善）
 
-## 生命周期
+[Validating References with Lifetimes](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#validating-references-with-lifetimes)：了解引用的生命周期。
 
+生命周期用于连接函数不同的参数与返回值，这样 rust 会有足够的信息来进行安全的内存操作，防止创建 dangling pointers 和其他破坏内存安全的操作。
 
 ## Macro
 
@@ -152,7 +154,13 @@ pub trait Summary {
 
 在 Rust 中，宏（Macro）是一种特殊的代码生成器，用于在编译时执行代码转换和代码生成。它们允许开发者编写通用代码模板，以及在编译时根据这些模板生成特定代码的能力。
 
-Rust 中的宏分为两种主要类型：过程宏（Procedural Macros）和声明宏（Declarative Macros）。
+macro 相较于函数来说，更加难以阅读与理解，因此比函数的维护难度要高。
 
-1. **过程宏（Procedural Macros）**：过程宏允许你编写一个宏，它可以像一个函数一样接受输入并产生代码作为输出。过程宏通常用于实现自定义的派生宏（derive macros）和自定义的属性宏（attribute macros），以及其他需要在编译时进行代码操作的场景。
-2. **声明宏（Declarative Macros）**：声明宏也被称为“宏规则”或“宏使用”（macro_rules!），它们是一种基于模式匹配的简单文本替换系统。通过声明宏，你可以定义一组规则，以便在源代码中匹配特定模式并进行替换。
+Rust macro 的分类：
+- declarative macros
+- procedural macros
+	- custom `#[derive]` macros
+	- attribute-like macros
+	- function-like macros
+
+declarative macros 在 rust 中广泛使用，它的定义类似 `match` 的语法。pattern 语法可以参考 [Macros By Example](https://doc.rust-lang.org/reference/macros-by-example.html#macros-by-example) 。

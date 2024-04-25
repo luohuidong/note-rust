@@ -154,9 +154,13 @@
   },
   "active": "487955297b560a3a",
   "lastOpenFiles": [
+    "assets/Pasted image 20240407160249.png",
+    "assets/Pasted image 20240407160707.png",
+    "assets/Pasted image 20240407120205.png",
+    "assets/Pasted image 20240407100603.png",
+    "index.md",
     "变量与可变性.md",
     "常量.md",
-    "index.md",
     "模块系统/模块系统.md",
     "所有权.md",
     "rustc与Cargo.md",
@@ -179,18 +183,13 @@
     "类型系统.md",
     "表达式/块与分号.md",
     "表达式/表达式与语句.md",
-    "assets/Pasted image 20240407160707.png",
-    "assets/Pasted image 20240407160249.png",
     "assets/Pasted image 20240407144518.png",
     "assets/Pasted image 20240407143728.png",
     "assets/Pasted image 20240407142513.png",
-    "assets/Pasted image 20240407120205.png",
     "assets/Pasted image 20240407100800.png",
-    "assets/Pasted image 20240407100603.png",
     "assets",
     "表达式",
     "数据类型/数值.md",
-    "数据类型/基础数据类型.md",
     "数据类型"
   ]
 }
