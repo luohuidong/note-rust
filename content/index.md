@@ -11,7 +11,7 @@ title: Rust Note
 - [[泛型]]
 - [[Trait]]
 - [[生命周期]]
-- [[Macro]]
+- [[宏（Macro）]]
 
 ## CLI 开发
 

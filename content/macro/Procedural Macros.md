@@ -1,0 +1,1 @@
+procedural macros 有三类，分别为 custom derive、attribute-like 和 function-like，这三类 macros 的工作方式什么类似。procedural macros 的表现比较像函数。procedural macros 接受某些代码作用输入，并生成一些代码作为输出。这一点与 declarative macros 对代码进行模式匹配并且替换代码的行为并不一样。
