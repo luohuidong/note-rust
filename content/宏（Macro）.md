@@ -1,4 +1,6 @@
 
+宏的前置知识为 [The Rust Programming Language](https://doc.rust-lang.org/stable/book/#the-rust-programming-language) 的前七章。
+
 - [Macros](https://doc.rust-lang.org/book/ch19-06-macros.html#macros)：了解宏，宏的功能类似于其他语言的装饰器。
 - [The Little Book of Rust Macros](https://veykril.github.io/tlborm/introduction.html#the-little-book-of-rust-macros)：宏的编写可以看这本书。
 
