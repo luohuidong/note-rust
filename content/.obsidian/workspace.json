@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "宏（Macro）.md",
+                "file": "macros/Declarative Macro.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 287.50390243530273
   },
   "right": {
     "id": "1e2e2c527cad6578",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "宏（Macro）.md"
+                "file": "macros/Declarative Macro.md"
               }
             }
           }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "宏（Macro）.md",
+                "file": "macros/Declarative Macro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "宏（Macro）.md",
+                "file": "macros/Declarative Macro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 292.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,8 +155,10 @@
   },
   "active": "85b3557c6d97cd6d",
   "lastOpenFiles": [
+    "macros/Macro.md",
     "index.md",
-    "宏（Macro）.md",
+    "macros/Declarative Macro.md",
+    "macros",
     "macro/Declarative macro 定义.md",
     "macro/Procedural Macros.md",
     "macro/Declarative macro 调试.md",
