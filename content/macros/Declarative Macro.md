@@ -1,5 +1,5 @@
 
-宏是一种简写形式。在编译期间，在检查类型并生成任何机器码之前，每个宏调用都会被展开。也就是说，每个宏调用都会被替换成一些 Rust 代码。declarative macro 在 rust 中广泛使用，是编写宏最简单的方式。
+declarative macro 在 rust 中广泛使用，是编写宏最简单的方式。
 
 ## 定义
 
@@ -74,31 +74,49 @@ let result = macro_example::vec!{1, 2, 3};
 
 虽然说用什么进行包裹对 rust 没有影响，但是在使用 declarative macro 的时候建议还是按照惯例来使用。在调用 `assert_eq!` 时使用圆括号，在调用 `vec!` 时使用方括号，而在调用 `macro_rules!` 时使用花括号。
 
-这里已经对 declarative macro 的形式有一个大致的了解，下一章节的内容将展开了解 declarative macro 的 pattern。
+### Pattern
 
-## Pattern
+declarative macro 的 pattern 虽然形式上与 match 的 pattern 类似，但实际上是完全不一样的东西，因为 declarative macro 的 pattern 用来匹配 rust 代码，而 match 的 pattern 用来匹配值。
 
-declarative macro 的 pattern 虽然形式上与 match 的 pattern 类似，但实际上是完全不一样的东西，因为 declarative macro 的 pattern 用来匹配 rust 代码，而 match 的 pattern 用来匹配值。如果要理解 pattern 的话，其实它更加类似于匹配字符串的正则表达式。
+以开头的例子来讲解，宏 `vec` 定义的 pattern 为 `$( $x:expr ),*`。我们将这个 pattern 分开三部分来理解，第一部分为 `$( $x:expr )`、第二部分为 `,`、第三部分为 `*`。
 
-以开头的例子来展开讲解：
+- `$( $x:expr )` 中的 `$()` 表示将捕获括号中定义的 pattern（即 `expr`）匹配的值，并将值保存在 `$x` 这元变量中。`expr` 表示定义的 pattern 用于匹配 Rust 表达式。
+- 紧跟在 `$()` 后面的 `,` 它表示出现在被 `$()` 捕获的代码之后的逗号它可出现也可以不出现。
+- `*` 表示 pattern 匹配的代码可以出现零次或以上。
+
+pattern 更加深入的了解可以参考 [Macros By Example](https://doc.rust-lang.org/reference/macros-by-example.html)。
+
+### Template
+
+开头的例子宏 `vec` pattern 为 `$( $x:expr ),*` 对应的 template 为：
 
 ```rust
-macro_rules! vec {
-    ( $( $x:expr ),* ) => {
-        {
-            let mut temp_vec = Vec::new();
-            $(
-                temp_vec.push($x);
-            )*
-            temp_vec
-        }
-    };
+{
+	let mut temp_vec = Vec::new();
+	$(
+		temp_vec.push($x);
+	)*
+	temp_vec
 }
 ```
 
-上面的例子中，宏 `vec` 定义的 pattern 为 `$( $x:expr ),*`。我们将这个 pattern 分开两部分来理解，一部分为 `$( $x:expr )`，另一部分为 `,*`。
+`$()*` 中的代码会生成零次或多次，这取决于 pattern 到底匹配了多少次。`$x` 则为 pattern 中定义的元变量。
 
-pattern 更加深入的了解可以参考 [Macros By Example](https://doc.rust-lang.org/reference/macros-by-example.html)。
+例子中 `vec![1, 2, 3]`，template 代码的实际生成为：
+
+```rust
+{
+    let mut temp_vec = Vec::new();
+    temp_vec.push(1);
+    temp_vec.push(2);
+    temp_vec.push(3);
+    temp_vec
+}
+```
+
+### Repetitions
+
+无论是在 matcher 还是在 transcriber，要重复的部分都是放到 `$()` 中表示，并且后面跟着repetition operator。repetition operator 有 `*`、`+`、`?`，其含义跟正则表达式中的含义相同。`$()` 与 repetition operator，可以选择添加 separator token。seperator token 可以是除了repetition operator 之外的标记，一般常用 `;` 或者 `,`。
 
 ## 调试
 
@@ -129,15 +147,7 @@ pattern 更加深入的了解可以参考 [Macros By Example](https://doc.rust-l
 
 #[macro_export]
 macro_rules! vec {
-    ( $( $x:expr ),* ) => {
-        {
-            let mut temp_vec = Vec::new();
-            $(
-                temp_vec.push($x);
-            )*
-            temp_vec
-        }
-    };
+    ...
 }
 ```
 
