@@ -1,5 +1,5 @@
 
-declarative macro 在 rust 中广泛使用，是编写宏最简单的方式。
+Declarative Macro 的的语法请查阅 [Macros By Example](https://doc.rust-lang.org/reference/macros-by-example.html#macros-by-example)
 
 ## 定义
 
@@ -114,9 +114,19 @@ pattern 更加深入的了解可以参考 [Macros By Example](https://doc.rust-l
 }
 ```
 
-### Repetitions
+## Repetitions
 
-无论是在 matcher 还是在 transcriber，要重复的部分都是放到 `$()` 中表示，并且后面跟着repetition operator。repetition operator 有 `*`、`+`、`?`，其含义跟正则表达式中的含义相同。`$()` 与 repetition operator，可以选择添加 separator token。seperator token 可以是除了repetition operator 之外的标记，一般常用 `;` 或者 `,`。
+无论是在 matcher 还是在 transcriber，都将会重复出现的 token 放到 `$(...)` 中，并且后面跟着repetition operator。
+
+`$(...)` 与 repetition operator 之间，可以选择添加 separator token。seperator token 可以是除了 delimiter 或者 repetition operator 之外的 token，一般常用 `;` 或者 `,`。如 `$( $i:ident ),*` 表示为任意数量被 `,` 分隔的标识符。
+
+repetition operator 有 `*`、`+`、`?`，其含义跟正则表达式中的含义相同：
+
+- `*` 表示任意数量的重复
+- `+` 表示最少一次的重复
+- `?` 表示为 optional fragment，可出现零次或一次
+
+由于 `?` 表示最多出现一次，因此不可与 separator 一起使用。
 
 ## 调试
 
