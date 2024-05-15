@@ -151,12 +151,28 @@ macro_rules! vec {
 ```rust
 => { $x } // 重复次数不匹配
 
-=> { $( $( $x)* )* } // 嵌套顺序不匹配
+=> { $( $( $x )* )* } // 嵌套顺序不匹配
 
 => { $( $x )+ } // 重复次数不匹配
 ```
 
-第二点是需要重复的 transcriber 必须包含最少一个 metavariable 来决定需要展开多少次。
+第二点是在 transcriber 每一个需要重复的部分必须包含最少一个 metavariable 来决定需要展开多少次。如果多个 matavariable 出现在同一个需要重复的部分，它们需要绑定到相同数量的 fragment，例如下面的例子必须绑定相同数量的 `$i` fragments 和 `$j` fragments：
+
+```rust
+( $( $i:ident ),* ; $( $j:ident ),* ) => (( $( ($i,$j) ),* ))
+```
+
+ 这就意味着
+
+```rust
+// 合法
+(a, b, c; d, e, f)
+
+// 展开结果：
+((a,d), (b,e), (c,f))
+```
+
+而 `a, b, c; d, e` 不合法，因为这种情况无法正确展开，`$i` 与 `$j` 的数量匹配不上。
 
 ## 调试
 
@@ -199,5 +215,33 @@ use macro_example;
 fn main() {
     let result = macro_example::vec!{1, 2, 3};
     println!("{:?}", result)
+}
+```
+
+## Hygiene
+
+Hygiene 用于解决宏展开过程中的命名冲突问题。
+
+默认情况下，在 macro 展开的过程，所有涉及的标识符都不会有任何变更。这些标识符会在 macro 调用的作用域中进行查找，这就导致如果这些标识符没法在作用域找到的话就会产生报错。而使用 `$crate` 则可以解决这个问题，`$crate` 可以用在路径开头来表示定义 macro 的 crate 的根路径。通过 `$crate` 就可以十分简便地使用当前 crate 定义的公共 item。
+
+```rust
+//// Definitions in the `helper_macro` crate.
+#[macro_export]
+macro_rules! helped {
+    // () => { helper!() } // This might lead to an error due to 'helper' not being in scope.
+    () => { $crate::helper!() }
+}
+
+#[macro_export]
+macro_rules! helper {
+    () => { () }
+}
+
+//// Usage in another crate.
+// Note that `helper_macro::helper` is not imported!
+use helper_macro::helped;
+
+fn unit() {
+    helped!();
 }
 ```
