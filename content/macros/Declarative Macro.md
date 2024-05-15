@@ -126,7 +126,37 @@ repetition operator 有 `*`、`+`、`?`，其含义跟正则表达式中的含�
 - `+` 表示最少一次的重复
 - `?` 表示为 optional fragment，可出现零次或一次
 
-由于 `?` 表示最多出现一次，因此不可与 separator 一起使用。
+由于 `?` 表示最多出现一次，因此不可与 separator 一起使用。因为最多出现一次的话，separator 就没有存在的必要。
+
+每次匹配的重复内容，会存储到 matavariables 里面，例如下面的例子中，matcher 每次匹配到的表达式都会存储到 `$x` 这个 matavariable 中，并且可以在 transcriber 中使用：
+
+```rust
+macro_rules! vec {
+    ( $( $x:expr ),* ) => {
+        {
+            let mut temp_vec = Vec::new();
+            $(
+                temp_vec.push($x);
+            )*
+            temp_vec
+        }
+    };
+}
+```
+
+在 transcription 过程中，需要有一些限制来确保编译器正确展开 macro。
+
+第一点是 metavariable 在 transcriber 中重复的次数、类型、嵌套顺序必须与在 matcher 中的一致。例如上面的例子中 matcher 是 `( $x:expr ),*`，那么以下几种 transcriber 都是不合法的：
+
+```rust
+=> { $x } // 重复次数不匹配
+
+=> { $( $( $x)* )* } // 嵌套顺序不匹配
+
+=> { $( $x )+ } // 重复次数不匹配
+```
+
+第二点是需要重复的 transcriber 必须包含最少一个 metavariable 来决定需要展开多少次。
 
 ## 调试
 
