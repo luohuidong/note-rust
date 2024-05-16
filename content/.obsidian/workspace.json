@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "macros/Declarative Macro.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ce696386579c9551",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "macros/Declarative Macro.md",
+                "file": "macros/Macro.md",
                 "mode": "source",
                 "source": false
               }
@@ -81,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.50390243530273,
-    "collapsed": true
+    "width": 287.50390243530273
   },
   "right": {
     "id": "1e2e2c527cad6578",
@@ -109,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "macros/Declarative Macro.md"
+                "file": "macros/Macro.md"
               }
             }
           }
@@ -126,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "macros/Declarative Macro.md",
+                "file": "macros/Macro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "macros/Declarative Macro.md",
+                "file": "macros/Macro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,8 +140,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5,
-    "collapsed": true
+    "width": 292.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -168,10 +154,10 @@
   },
   "active": "85b3557c6d97cd6d",
   "lastOpenFiles": [
+    "macros/Procedural Macro.md",
+    "macros/Declarative Macro.md",
     "macros/Macro.md",
     "index.md",
-    "macros/Declarative Macro.md",
-    "macros/Procedural Macros.md",
     "macros",
     "macro/Declarative macro 定义.md",
     "macro/Procedural Macros.md",

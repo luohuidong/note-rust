@@ -1,13 +1,20 @@
-procedural macros 有三类，分别为 custom derive、attribute-like 和 function-like，这三种 macros 的工作方式都是类似。procedural macros 的表现比较像函数。procedural macros 接受某些代码作用输入，并生成一些代码作为输出。这一点与 declarative macros 对代码进行模式匹配并且替换代码的行为并不一样。
+procedural macro 允许创建语法扩展作为函数执行。procedural macro 有三种形式：
 
-截止2024年05月04日，编写 procedural macro 需要在独立的 crate 中。如果需要编写一个 custom derive procedural，根据约定，它的命名应该以 derive 为后缀。例如 foo_derive。
+- function-like macros
+- derive macros
+- attribute macros
 
-另外需要在 Cargo.toml 中添加：
+这三种形式的 procedural macro 工作方式类似。
+
+procedural macros 允许在编译期间通过代码对 rust 语法进行操作，即对 AST 进行修改。它接受某些代码作用输入，并生成一些代码作为输出。这一点与 declarative macros 对代码进行模式匹配并且替换代码的行为并不一样。
+
+procedural macros 必须定义在 crate type 为 proc-macro 的 crate 中。通过 Cargo.toml 可以设置 crate 类型：
 
 ```toml
 [lib]
 proc-macro = true
 ```
+
 
 
 ```rust
