@@ -1,4 +1,6 @@
-procedural macro 允许创建语法扩展作为函数执行。procedural macro 有三种形式：
+procedural macro 的形式为一个 rust 函数，输入 token stream 后再输出 token stream。简单的来说就是对 AST 进行修改。
+
+procedural macro 有三种形式：
 
 - function-like macros
 - derive macros

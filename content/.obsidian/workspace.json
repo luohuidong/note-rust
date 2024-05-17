@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "macros/Macro.md",
+                "file": "macros/Procedural Macro.md",
                 "mode": "source",
                 "source": false
               }
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "macros/Macro.md"
+                "file": "macros/Procedural Macro.md"
               }
             }
           }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "macros/Macro.md",
+                "file": "macros/Procedural Macro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "macros/Macro.md",
+                "file": "macros/Procedural Macro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,9 +154,9 @@
   },
   "active": "85b3557c6d97cd6d",
   "lastOpenFiles": [
+    "macros/Macro.md",
     "macros/Procedural Macro.md",
     "macros/Declarative Macro.md",
-    "macros/Macro.md",
     "index.md",
     "macros",
     "macro/Declarative macro 定义.md",
