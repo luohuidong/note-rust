@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.50390243530273,
-    "collapsed": true
+    "width": 287.50390243530273
   },
   "right": {
     "id": "1e2e2c527cad6578",
@@ -141,8 +140,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5,
-    "collapsed": true
+    "width": 292.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -156,9 +154,9 @@
   },
   "active": "85b3557c6d97cd6d",
   "lastOpenFiles": [
-    "macros/Macro.md",
-    "macros/Procedural Macro.md",
     "macros/Declarative Macro.md",
+    "macros/Procedural Macro.md",
+    "macros/Macro.md",
     "index.md",
     "macros",
     "macro/Declarative macro 定义.md",
