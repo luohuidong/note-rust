@@ -1,4 +1,3 @@
-
 Declarative Macro 的的语法请查阅 [Macros By Example](https://doc.rust-lang.org/reference/macros-by-example.html#macros-by-example)
 
 ## 定义
