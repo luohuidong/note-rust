@@ -1,4 +1,5 @@
 {
   "accentColor": "",
-  "nativeMenus": false
+  "nativeMenus": false,
+  "interfaceFontFamily": "Noto Sans SC"
 }

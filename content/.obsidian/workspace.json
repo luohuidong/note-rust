@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "错误处理.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "错误处理.md"
+                "file": "index.md"
               }
             }
           }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "错误处理.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "错误处理.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,23 +154,24 @@
   },
   "active": "487955297b560a3a",
   "lastOpenFiles": [
-    "结构体.md",
+    "panic.md",
     "生命周期.md",
-    "泛型.md",
-    "macros/Macro.md",
     "index.md",
-    "错误处理.md",
+    "pinic.md",
+    "Trait.md",
+    "泛型.md",
     "模块系统.md",
     "枚举与模式匹配.md",
+    "结构体.md",
     "所有权.md",
     "基础概念.md",
+    "macros/Macro.md",
+    "macros/Declarative Macro.md",
     "macros/Procedural Macro.md",
     "macros/Function-like Proc Macro.md",
     "macros/Derive Proc Macro.md",
-    "macros/Declarative Macro.md",
     "macros/Attribute Proc Macro.md",
     "macros",
-    "Trait.md",
     "assets/Pasted image 20240407160249.png",
     "assets/Pasted image 20240407160707.png",
     "assets/Pasted image 20240407120205.png",
@@ -185,7 +186,6 @@
     "表达式/表达式.md",
     "表达式/发散函数.md",
     "表达式/高阶函数.md",
-    "表达式/函数.md",
     "assets/Pasted image 20240407144518.png",
     "assets/Pasted image 20240407143728.png",
     "assets/Pasted image 20240407142513.png",
