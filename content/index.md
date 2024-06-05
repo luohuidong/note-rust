@@ -1,6 +1,7 @@
 ---
 title: Rust Note
 ---
+
 ## 基础概念
 
 [Hello, World!](https://doc.rust-lang.org/book/ch01-02-hello-world.html#hello-world)，[Hello, Cargo!](https://doc.rust-lang.org/book/ch01-03-hello-cargo.html#hello-cargo)，了解 rustc 和 cargo。
@@ -27,6 +28,7 @@ title: Rust Note
 [What Is Ownership?](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#what-is-ownership)，了解所有权。所有权是 Rust 独特的内存管理机制，能保证资源的及时释放，避免内存泄漏的问题。
 
 所有权的规则：
+
 - Each value in Rust has an _owner_.
 - There can only be one owner at a time.
 - When the owner goes out of scope, the value will be dropped.
@@ -60,6 +62,8 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 - [Paths for Referring to an Item in the Module Tree](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#paths-for-referring-to-an-item-in-the-module-tree)：了解模块的引用。
 - [Bringing Paths into Scope with the `use` Keyword](https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html#bringing-paths-into-scope-with-the-use-keyword)：通过 use 关键字简化模块引用。
 - [Separating Modules into Different Files](https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html#separating-modules-into-different-files)：了解如何将不同的模块拆分到不同的文件中。
+
+package 可以包含多个 crate，一个 crate 可以包含多个模块。crate 是关于项目间代码共享，而模块是关于项目内代码组织的，两者扮演着 Rust 命名空间的角色。
 
 ## 泛型
 
@@ -155,9 +159,14 @@ pub trait Summary {
 	- [Recoverable Errors with `Result`](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#recoverable-errors-with-result)
 	- [To `panic!` or Not to `panic!`](https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html#to-panic-or-not-to-panic)
 
-Rust 将错误分为可恢复错误和不可恢复的错误。可恢复错误，类似于文件不存在这种错误，我们通常是想将问题报告给用户，然后进行重试操作而无需停止程序。不可恢复错误，通常是 bug，一般遇到的话需要停止程序。
+Rust 将错误分为可恢复错误和不可恢复的错误。
 
-大多数语言并不区分这两种错误，并且使用相同的方式来处理这两种错误。但是在 Rust 中则是分开处理的，可恢复场景使用 `Result`，不可恢复场景使用 [[panic]] 宏来终止程序执行。
+可恢复错误，一般是由程序外部的事物引发的错误，比如错误的输入、网络中断或权限问题。这些问题并不是意料之中的，在没有任何 bug 的程序中也可能会时不时出现。这些问题出现的时候往往并不需要停止程序，例如文件不存在这种错误，我们通常是想将问题报告给用户，然后进行重试操作而无需停止程序。
+
+不可恢复错误，通常是 bug 造成的，一般遇到的话需要停止程序。
+
+大多数语言并不区分这两种错误，并且使用相同的方式来处理这两种错误，但是在 Rust 中则是分开处理的。可恢复场景使用 `Result` 用于指示出可能的失败。不可恢复场景使用 [[panic]] 宏来终止程序执行。
+
 
 ## Macro
 
