@@ -65,6 +65,12 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 
 package 可以包含多个 crate，一个 crate 可以包含多个模块。crate 是关于项目间代码共享，而模块是关于项目内代码组织的，两者扮演着 Rust 命名空间的角色。
 
+在文件中如果遇到 `mod foo`，Rust 编辑器会同时检查 `foo.rs` 和 `foo/mod.rs`。其中一个存在则自动解析这个文件。如果这两个文件不存在或者都存在，则会报错。
+
+模块中的内容需要公开则需要通过 `pub` 来标记。例如要公开 `foo` 模块，则可以写成 `pub mod foo`。
+
+要访问模块中公开的内容，需要使用 `::` 运算符，例如引用某个标准库的内容 `std:men::swap()`，在项目中任何的位置都可以通过写出路径的方式来引用标准库的特性。但是在同一个文件中多次编写 `std:men::swap()` 比较繁琐，因此可以通过 `use` 来将这些特性导入到模块中，如 `use std::mem::{ swap };`，这样在调用的时候就可以直接写成 `swap()` 即可。`use` 声明使得 `swap` 在整个封闭块或模块中中成了 `std:men::swap` 的别名。
+
 ## 泛型
 
 [Generic Data Types](https://doc.rust-lang.org/book/ch10-01-syntax.html#generic-data-types)，了解泛型的使用。
