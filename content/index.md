@@ -53,6 +53,8 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 - [The `match` Control Flow Construct](https://doc.rust-lang.org/book/ch06-02-match.html#the-match-control-flow-construct)，`match` 类似与其他语言的 `switch` 语句。
 - [Concise Control Flow with `if let`](https://doc.rust-lang.org/book/ch06-03-if-let.html#concise-control-flow-with-if-let)：使用 `if let` 比 `match` 更简洁。
 
+相较与其他语言，Rust 的枚举可以包含数据，甚至是不同类型的数据。
+
 常用的内置 Enum 为 `Option`。 `match` 与 `if let` 可以与 `Option` 搭配使用。使用 `if let` 可以写出比 `match` 更简洁的代码，但是 `if let` 并不像 `match` 那样强制处理 enum 的每一种情况，这需要根据自己的实际情况来选择究竟是使用 `if let` 还是使用 `match` 。
 
 ## 模块系统
