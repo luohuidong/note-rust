@@ -49,13 +49,50 @@ associated function 分为两类，一类是跟实例关联的，这类似于 Ja
 
 ## 枚举与模式匹配
 
-- [Defining an Enum](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#defining-an-enum)，了解 Enum 的使用。
+- [Defining an Enum](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#defining-an-enum)，了解 Enums 的使用。
 - [The `match` Control Flow Construct](https://doc.rust-lang.org/book/ch06-02-match.html#the-match-control-flow-construct)，`match` 类似与其他语言的 `switch` 语句。
 - [Concise Control Flow with `if let`](https://doc.rust-lang.org/book/ch06-03-if-let.html#concise-control-flow-with-if-let)：使用 `if let` 比 `match` 更简洁。
 
-相较与其他语言，Rust 的枚举可以包含数据，甚至是不同类型的数据。
+Rust 的枚举相对于其他语言的枚举由更加丰富的功能。除了能 C 风格的枚举之外，Rust 枚举变体还可以附加数据。
 
-常用的内置 Enum 为 `Option`。 `match` 与 `if let` 可以与 `Option` 搭配使用。使用 `if let` 可以写出比 `match` 更简洁的代码，但是 `if let` 并不像 `match` 那样强制处理 enum 的每一种情况，这需要根据自己的实际情况来选择究竟是使用 `if let` 还是使用 `match` 。
+如果由其他语言的基础，那么我们想表示一个 IP 地址，会很直觉地先使用 enum 表示 IP 地址的类型，并使用类或者结构体来表示 IP 地址的类型，然后进行实例化：
+
+```rust
+enum IpAddrKind {
+	V4,
+	V6,
+}
+
+struct IpAddr {
+	kind: IpAddrKind,
+	address: String,
+}
+
+let home = IpAddr {
+	kind: IpAddrKind::V4,
+	address: String::from("127.0.0.1"),
+};
+
+let loopback = IpAddr {
+	kind: IpAddrKind::V6,
+	address: String::from("::1"),
+};
+```
+
+而在 Rust 中可以有更简洁的表示方法，可以直接将数据附加到枚举变体，而不需要定义 struct：
+
+```rust
+enum IpAddr {
+	V4(u8, u8, u8, u8),
+	V6(String),
+}
+
+let home = IpAddr::V4(127, 0, 0, 1);
+
+let loopback = IpAddr::V6(String::from("::1"));
+```
+
+上面的示例中，枚举所定义的变体变成了一个方法，可用于构造枚举的实例。
 
 ## 模块系统
 
