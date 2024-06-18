@@ -94,7 +94,103 @@ let loopback = IpAddr::V6(String::from("::1"));
 
 上面的示例展示了枚举所定义的变体变成了一个方法，可用于构造枚举的实例。另外从例子中还可以得知我们可以将任意类型的数据附加到枚举变体中。
 
-常用的标准库提供的 Enum 有 `Option` 和 `Result`。一般常与模式匹配搭配使用。
+有时候我们需要对不同的 Enum 变体做不同的变体，做出不同的处理，这种情况可以使用 `match` 或者 `if let`。`match` 和 `if let` 都是用于模式匹配的控制流结构，相较于 `match`，`if let` 是一种更简洁的模式匹配结构。
+
+举一个投骰子的例子：
+
+```rust
+enum Num {
+	One,
+	Two,
+	Three,
+	Four,
+	Five,
+	Six,
+}
+
+fn echo(val: Num) {
+	match val {
+		Num::One => println!("one"),
+		Num::Two => println!("two"),
+		Num::Three => println!("three"),
+		Num::Four => println!("four"),
+		Num::Five => println!("five"),
+		Num::Six => println!("six"),
+	}
+}
+
+echo(Num::One);
+```
+
+上面的例子中，`val` 的值会从上往下匹配 `match` 中的 pattern。如果有匹配到 pattern，则会执行 pattern 相关的代码块。
+
+如果想 `val` 为 1 的时候，不做任何处理，而其他值则直接打印值，则可以：
+
+```rust
+#[derive(Debug)]
+enum Num {
+	One,
+	Two,
+	Three,
+	Four,
+	Five,
+	Six,
+}
+
+fn echo(val: Num) {
+	match val {
+		Num::One => (),
+		others => {
+			println!("others: {:?}", others)
+		}
+	}
+}
+
+echo(Num::Two);
+```
+
+如果仅在点数为1的时候打印文字，而在其他情况则不做任何处理，则可以使用占位符捕获其他情况：
+
+```rust
+enum Num {
+	One,
+	Two,
+	Three,
+	Four,
+	Five,
+	Six,
+}
+
+fn echo(val: Num) {
+	match val {
+		Num::One => println!("one"),
+		_ => (),
+	}
+}
+
+echo(Num::One);
+```
+
+如果觉得 `match` 写起来比较繁琐，则可以使用 `if` 和 `let` 的结合，简化匹配值的处理：
+
+```rust
+enum Num {
+	One,
+	Two,
+	Three,
+	Four,
+	Five,
+	Six,
+}
+
+fn echo(val: Num) {
+	if let Num::One = val {
+		println!("One");
+	}
+}
+
+echo(Num::One);
+```
 
 ## 模块系统
 
