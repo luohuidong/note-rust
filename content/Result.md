@@ -86,4 +86,4 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 ```
 
-上面的例子中，`File::open` 将文件发生错误的处理移交给 `read_username_from_file` 函数，而 `read_username_from_file` 又将错误移交给它的调用者。
+上面的例子中，`read_username_from_file` 函数内部并没有对成功或者失败的情况进行一个特殊的处理，而是直接给调用者返回一个 `Result` 类型的值，由调用者进行具体的操作。
